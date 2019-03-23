@@ -4,15 +4,14 @@ python:
 sudo: false
 cache:
   directories:
-  - ~/.platformio
-
+  - "~/.platformio"
+env:
+- PLATFORMIO_CI_SRC=src/
 install:
 - pip install -U platformio
-
 script:
 - platformio run -e nodemcuv2_deploy
 - platformio run -e d1_mini_deploy
-
 deploy:
   on:
     repo: CyberSteve99/esp8266-ci-ota
@@ -22,5 +21,6 @@ deploy:
   provider: releases
   overwrite: true
   api_key:
-    secure: DeLq8sczTsEAo3qi2ztSYgvaeidenvJherPCrceoknNuBs8SEsb8czGxBDPKt7lzK155Kcsfq/zo1VtUpVQ8HsalMQJABv9Li6t1uBc0m+mSLGggxw9woGzHv8FfnJdqeBD3YXgX8Qrmlnqp5QdIDZuyRfOxeF4NFwWZ89aOxMO8Kk363ykvQg5mq8mbqzHJOtCQCkHOEjklhcMTaHZgW/mlt7jBbuX/RM5jGTTAEOIKU/gmVvLo1LQMgsvJ2BCSLMrkEZmfxPncI1xTf26X7aSu01krn6oaROgJtFpTWEmSWHDHOJwngPC36SuaVtyd5WHE8u6+ZkDlfZsvDShq7Iap6vzqZwrTM3NvNyAnLWbE4YLLBDkuHMojyhy5MkvFLjVfEd4wkvy4JOnCL7IhJjcM4OWEXykZv80X/XBqT3XcZYYaorXs1x7rVUCsMYIxythVRaBzsP61NMFIEbLxV0maTYbuLMWX2HmForumMkk6SD7NdbaONZUaKRaG5G/QGWGHrOfVwBWCL/0KEZl6mKqkfadAQI4GWD77MOWn5JNmbM6bVE2hD/oVkSoao1XdY2N0flDEQQuVu3GHIweN3f5kudJ/bS04US1iyWw3t3PYtNOaQrUFtoUMd88/Q6hzzbdYuVVvjBH4Lsni4i/svMu//7URWXGgmcjm14Fr8xU=
+    secure: LIGCNkBuTjKB5wrBc5JCIGdaIeTlMEV8TAN8XpmEL4NjpnnsTZqkX3vPvd+INKDSEXEodcAQ7MTBpNbV57o2LwlQ2zkoDaum2WgscZM1s8TvfB4nUDr0ScvZhL/e/DEWZDMA7GDPdxzWndN8dCAYrhLLLPral3p16W3MVSDDbKSdCItz+Cuf4h5T2cUxrxmGxvQ06K6oLhhFKVFGwU40nkg6jHfnO/gfRbkAPpBNG/ZUu6MVBE1IZCw+Ue/SFcyjZwKgML1SWZTcj5/P3CoYnx1HRIxgp7yWPp/M/am3Idv0tHgEBhd5Lm8VlnIFcuKbi2acEAlU/+rJ7SMt2iL4mk7yGWXBKuDkEbw0dsLzneFmrYhWZ61nBJzKo+geI8dMyhLL7l+jw8ibGdG01y+Z9cq6L++LnVAc82/PlhQV9GzIvyZU6/XOJ/1JuK7sWY8ehXQq4l9JkcPzn05OtF+Kbc4y33X3OGRqSsG8tg7tjLwR1bNSjPNwC4lFL3z2aKPr3z4UM77XRU/IkGBejup7HzHdIdOy7PZvLd5ouQWq/BZ/ueYgtv9UBsp2p7ZmhPh8nvlIoBgsMjzROvL4vhcgoY5eetq3UXNn/9S8avoMuoorky16dfx1slsSZnN84CqbRmirQWsu7QAZCs9iMZD+AvJGsIXjLCoK/1kBsIctCgo=
+  file: ".pioenvs/d1_mini_deploy/firmware.bin"
   file: ".pioenvs/nodemcuv2_deploy/firmware.bin"

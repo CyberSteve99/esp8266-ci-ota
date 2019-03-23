@@ -51,7 +51,7 @@ void loop() {
       if((WiFiMulti.run() == WL_CONNECTED)) {
 
               Serial.println("Checking for Update. Current version: " + buildTag);
-              t_httpUpdate_return ret = ESPhttpUpdate.update("http://www.squix.org/blog/firmware.php?tag=" + buildTag);
+              t_httpUpdate_return ret = ESPhttpUpdate.update("http://192.168.1.9/esp/firmware.php?tag=" + buildTag);
 
               switch(ret) {
                   case HTTP_UPDATE_FAILED:

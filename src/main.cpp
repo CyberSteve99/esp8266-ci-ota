@@ -8,7 +8,7 @@
 #include <ESP8266httpUpdate.h>
 #include <Ticker.h>
 
-#define CHECK_INTERVAL 60
+#define CHECK_INTERVAL 60*60
 // Stringifying the BUILD_TAG parameter
 #define TEXTIFY(A) #A
 #define ESCAPEQUOTE(A) TEXTIFY(A)

@@ -1,5 +1,5 @@
 <?php
-    $githubApiUrl = "https://api.github.com/repos/squix78/esp8266-ci-ota/releases/latest";
+    $githubApiUrl = "https://api.github.com/repos/CyberSteve99/esp8266-ci-ota/releases/latest";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

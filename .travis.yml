@@ -5,14 +5,13 @@ sudo: false
 cache:
   directories:
   - ~/.platformio
-env:
-- PLATFORMIO_CI_SRC=src/
 
 install:
 - pip install -U platformio
-- platformio lib install 567 562
+
 script:
 - platformio run -e nodemcuv2_deploy
+- platformio run -e d1_mini_deploy
 
 deploy:
   on:

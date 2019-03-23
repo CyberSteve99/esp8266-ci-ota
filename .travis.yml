@@ -17,7 +17,7 @@ deploy:
   on:
     repo: CyberSteve99/esp8266-ci-ota
     all_branches: true
-    condition: $BUILD_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+    condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
   skip_cleanup: true
   provider: releases
   overwrite: true
